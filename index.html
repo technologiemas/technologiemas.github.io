@@ -934,7 +934,6 @@ html{
           box-sizing:inherit; }
 
 body{
-max-width: 800px;margin: 0 auto;text-justify: inter-word;
   font-size:14px;
   font-weight:400;
   letter-spacing:0;
@@ -14593,14 +14592,64 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<style>body{
+    max-width: 800px;
+    margin: 0 auto;
+    text-justify: inter-word;
+}
+</style>
+<title>Thomas Dashboard</title>
+<nav class="crumbs">
+    <ol>
+        <li class="crumb"><a href="/index">Home </a></li>
+        <li class="crumb"><a href="/internet_movie_dataviz">Internet Movie Dataviz </a></li>
+        <a href="/kia_picanto_go_fast">Kia Picanto go fast </a>
+    </ol>
+</nav>
+<style>
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '•';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+}
+</style>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Hello!">Hello!<a class="anchor-link" href="#Hello!">&#182;</a></h2><p>Welcome to my dashboard.
 Here you'll find a few of the programming and data science related projects I've been working on.
 Most were born out hobby projects for teaching myself to code. All were born out of me being curious enough to explore random topics.</p>
+<br>
 <h2 id="Subjects">Subjects<a class="anchor-link" href="#Subjects">&#182;</a></h2><h3 id="Kia-Picanto-go-fast"><a href="/kia_picanto_go_fast">Kia Picanto go fast</a><a class="anchor-link" href="#Kia-Picanto-go-fast">&#182;</a></h3><p>During a vacation I ran a real life experiment using the petrol-use meter of our car.
 It turns out driving fast truly is inefficient.</p>
 <h3 id="Internet-Movie-Dataviz"><a href="/internet_movie_dataviz">Internet Movie Dataviz</a><a class="anchor-link" href="#Internet-Movie-Dataviz">&#182;</a></h3><p>This project was done as a capstone project for the Google Data Analytics course.
 I found a database online that uses the API of a popular movie database site.
 Using this database, I created a variety of graphs exploring the popularity of movies.</p>
+<br>
+<br>
 <h4 id="How-I-created-this-site:">How I created this site:<a class="anchor-link" href="#How-I-created-this-site:">&#182;</a></h4><p>Using Jupyter Notebook and Rmarkdown to transcribe markdown files and Python, SQL and R script into html files.
 The links in this document are links to these html files.
 All of these files were then hosted via GitHub Pages.
