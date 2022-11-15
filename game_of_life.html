@@ -1,0 +1,61 @@
+
+<meta charset="utf-8" />
+
+<head>
+    <title>Game of Life</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+<nav class="crumbs">
+    <ol>
+        <li class="crumb"><a href="/index">Home </a></li>
+        <li class="crumb"><a href="/internet_movie_dataviz">Internet Movie Dataviz </a></li>
+        <a href="/kia_picanto_go_fast">Kia Picanto go fast </a>
+    </ol>
+</nav>
+    <h1 id="game-of-life">Game of Life</h1>
+    <p>What you are looking at is Conway&#39;s game of life.
+    A two-dimensional world of living square cells.
+    These cells are in connection to each of their eight neighbours, on which their survival depends.</p>
+    <p>The game is based on sequential generations. Creation and survival of cells mimics a population via reproduction, and under- and overpopulation.</p>
+    <p>The status of living for each cell is determined based on a few simple rules:</p>
+    <ul>
+    <li>A dead cell with three neighbours alive becomes a living cell.</li>
+    <li>A living cell with fewer than two neighbours dies.</li>
+    <li>A living cell with more than three neighbours dies.</li>
+    <li>A living cell with two or three neighbours survives.</li>
+    </ul>
+    <p>You might notice some patterns are stable. Stability might be static, or even moving.
+    Due to this fact a programmable automaton can be created. In other words, a computer. </p>
+
+    <br>
+
+    <canvas id="myCanvas" width = 500 height = 500
+    style="border:1px solid #c3c3c3;">
+    Your browser does not support the canvas element.
+    </canvas>
+
+    <br>
+
+    <button id="startButton">Start game</button>
+    <button id="resetButton" onclick="reset()">Reset game</button>
+<!--    <button onclick="nextBoard(stage, win, CELL_HEIGHT, CELL_WIDTH)">Next gen</button>-->
+    <div class="slidecontainer">
+        <label for="speedRange"></label><input type="range" min=1 max=300 value=70 class="slider" id="speedRange">Speed
+    </div>
+
+    <div class="slidecontainer">
+        <label for="sizeRange"></label><input type="range" min=10 max=150 value=40 class="slider" id="sizeRange">Size
+    </div>
+
+
+    <script src="game_of_life.js"></script>
+    <script src="./buttons.js"></script>
+
+    <br>
+
+
+</body>

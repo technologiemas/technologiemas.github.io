@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+body{
+    max-width: 800px;
+    margin: 0 auto;
+    text-justify: inter-word;
+}
+
+* {
+    font-family: 'Lato', serif;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '•';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
