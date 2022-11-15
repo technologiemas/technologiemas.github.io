@@ -1,10 +1,30 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body{
     max-width: 800px;
-    margin: 0 auto;
+    margin: 30px;
     text-justify: inter-word;
+    font-size:14px;
+    font-weight:400;
+
 }
+
+h1.bp3-heading, .bp3-running-text h1{
+  font-size:36px;
+  line-height:40px; }
+
+h2.bp3-heading, .bp3-running-text h2{
+  font-size:28px;
+  line-height:32px; }
+
+h3.bp3-heading, .bp3-running-text h3{
+  font-size:22px;
+  line-height:25px; }
+
+h4.bp3-heading, .bp3-running-text h4{
+  font-size:18px;
+  line-height:21px; }
 
 * {
     font-family: 'Lato', serif;
