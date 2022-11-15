@@ -3,11 +3,12 @@
 
 body{
     max-width: 800px;
-    margin: 30px;
+    /*margin: 30px;*/
+    margin: auto;
     text-justify: inter-word;
     font-size:14px;
     font-weight:400;
-      letter-spacing:0;
+    letter-spacing:0;
     line-height:1.28581;
 
 }
