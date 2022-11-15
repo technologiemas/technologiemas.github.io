@@ -102,6 +102,10 @@ async function main() {
 
     let win = fillBoard(settings.cols, settings.rows)
 
+    const cellHeight = settings.height / settings.rows
+    const cellWidth = settings.width / settings.cols
+    drawCells(ctx, win, cellHeight, cellWidth);
+
     // noinspection InfiniteLoopJS
     while (true) {
         if (globalState.running) {
