@@ -2,6 +2,7 @@
 
 <html lang="en">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <title>Internet Movie Dataviz</title>
@@ -31,7 +32,7 @@
     middle of these two is the creation of data visualizations. Here is a
     random collection of graphs from a data analysis on a movie dataset.
     These figures each tell a story of their own.</p>
-    <span style="font-size: small; ">
+    <span style="font-size: small">
      This project was done as the capstone project for the
     Google Data Analytics course on Coursera: <a href="https://www.coursera.org/professional-certificates/google-data-analytics" class="uri">https://www.coursera.org/professional-certificates/google-data-analytics</a>.
     The dataset is from the GroupLens website, a site for comparing and
@@ -69,8 +70,11 @@ rating.</p>
 <p><font size="1"> Note: information on budget is not available for all
 movies. These were filtered out. </font></p>
 <object class="graph_importer" type="text/html" data="/imd_graphs/budget_vs_rating.html"></object>
-<pre><code>## [1] R-squared:
+
+    <pre><code>## [1] R-squared:
 ## [1] 0.01037655</code></pre>
+
+    <br>
 
     <h2>Popularity of genres</h2>
 <p>In this graph the number of times a movie is tagged with a certain
@@ -89,15 +93,40 @@ which you can do by selecting the stacked area chart from the second tab
 ratings for each genre. This was calculated by taking the average rating
 per movie, and looking at the primary genre that was listed.</p>
 
-    <h3>Line chart</h3>
+    <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Line chart')" id="defaultOpen">Line chart</button>
+          <button class="tablinks" onclick="openTab(event, 'Stacked area')">Stacked area</button>
+          <button class="tablinks" onclick="openTab(event, 'Ratings per genre')">Ratings per genre</button>
+
+          <script>
+            function openTab(evt, tabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+                }
+        </script>
+    </div>
+
+
+
+    <div id="Line chart" class="tabcontent">
 <p>From this graph it’s clear to see which are the most popular genres.
 Drama, Action and Thriller dominate.</p>
 <p>Many genres show an increase in tags through time. Especially
 Documentary has seen a huge uptick. Western is an exception here: in
 latter-day the genre seems almost died out.</p>
     <object class="graph_importer" type="text/html" data="/imd_graphs/genres_through_time.html"></object>
+    </div>
 
-    <h3>Stacked area</h3>
+    <div id="Stacked area" class="tabcontent">
 <p>Some interesting trends through time can be detected using this
 graph. As mentioned at <em>Line chart</em>, since the 2000’s
 Documentary’s seems to be booming in popularity. Similarly, Western’s
@@ -108,15 +137,22 @@ dominant.</p>
 <p>At the extremes of the x-axis dates, the graph starts to fall apart.
 Not enough data is available for these sections.</p>
     <object class="graph_importer" type="text/html" data="/imd_graphs/genres_through_time_stacked.html"></object>
+    </div>
 
-    <h3>Ratings per genre</h3>
+    <div id="Ratings per genre" class="tabcontent">
 <p>Some genres score exceptionally high when comparing these
 distributions. For instance, Animation, Documentary and War. All seemed
 skewed towards higher ratings.</p>
 <p>This graph also reveals the unfortunate truth about one of my
 favorite genres: not many good horror-movies exist.</p>
     <object class="graph_importer" type="text/html" data="/imd_graphs/ratings_per_genre.html"></object>
-
+    </div>
 
 </body>
 </html>
+
+
+<script>
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
