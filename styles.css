@@ -6,10 +6,10 @@
        max-width: 100% !important;
       padding-left: 2% !important;
       padding-right: 2% !important;
-       font-size: 20px !important;
+       font-size: 1.25em !important;
    }
     .customnav li a {
-        font-size: 25px !important;
+        font-size: 1.5625em !important;
     }
 }
 
@@ -24,13 +24,13 @@ p {
 a { text-decoration: none; }
 
 body{
-    max-width: 700px;
+    max-width: 43.75em;
     margin: auto;
     padding: 5%;
     text-justify: inter-word;
     text-align: justify;
-    font-size:18px;
-    font-weight:400;
+    font-size:1.125em;
+    font-weight: 400;
     letter-spacing:0;
     line-height:1.28581;
     border: 0 none;
@@ -58,10 +58,10 @@ body{
 .customnav li a{
 
   float: left;
-  padding: 14px 16px;
+  padding: 0.875em 1em;
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25em;
   text-align: center; /* If you want the text to be centered */
 }
 
@@ -86,23 +86,23 @@ body{
   bottom: 10%;
   z-index: 600;
   right: 10%;
-  border-radius: 5px;
+  border-radius: 0.625em;
     float: right}
 
 .github-menu:hover {
-  box-shadow: 0px 0px 30px 1px rgba(46, 139, 87, 0.3) !important;
+  box-shadow: 0px 0px 1.875em 1px rgba(46, 139, 87, 0.3) !important;
 }
 
 .github-element{
   display: flex;
   align-items: center;
   color: seagreen;
-  padding: 10px;
+  padding: 0.625em;
   cursor: pointer;
 }
 
 .github-text {
-  padding-left: 10px;
+  padding-left: 0.625em;
 }
 
 .github-text h5 {
@@ -116,5 +116,5 @@ body{
 
 .graph_importer {
     width:100%;
-    height:400px
+    height:25em
 }
