@@ -3,7 +3,7 @@ function fillBoard(COLS, ROWS) {
 }
 
 function drawCells(ctx, win, CELL_HEIGHT, CELL_WIDTH) {
-    const BLACK = '#000000';
+    const BLACK = 'seagreen';
     const WHITE = '#ffffff';
 
     ctx.fillStyle = BLACK;
