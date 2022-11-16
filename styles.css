@@ -8,12 +8,12 @@
 /*   }*/
 /*}*/
 
-/*@media only screen and (max-width: 600px) {*/
-/*   body {*/
-/*      padding-left: 2% !important;*/
-/*      padding-right: 2% !important;*/
-/*   }*/
-/*}*/
+@media only screen and (max-width: 900px) {
+   body {
+      padding-left: 2% !important;
+      padding-right: 2% !important;
+   }
+}
 
 * {
     font-family: 'Lato', serif;
