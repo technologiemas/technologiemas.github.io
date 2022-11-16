@@ -6,11 +6,11 @@
        max-width: 100% !important;
       padding-left: 2% !important;
       padding-right: 2% !important;
-       font-size: 1.25em !important;
+       font-size: 1.2em !important;
    }
-    .customnav li a {
-        font-size: 1.5625em !important;
-    }
+    /*.customnav li a {*/
+    /*    font-size: 1.5625em !important;*/
+    /*}*/
 }
 
 * {
@@ -61,7 +61,7 @@ body{
   padding: 0.875em 1em;
   color: white;
   text-decoration: none;
-  font-size: 1.25em;
+  font-size: 1em;
   text-align: center; /* If you want the text to be centered */
 }
 
