@@ -1,19 +1,24 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
-/*@media only screen and (max-width: 1500px) {*/
+/*@media only screen and (max-width: 900px) {*/
 /*   body {*/
-/*      padding-left: 5% !important;*/
-/*      padding-right: 5% !important;*/
+/*       max-width: 100% !important;*/
+/*      padding-left: 2% !important;*/
+/*      padding-right: 2% !important;*/
 /*   }*/
 /*}*/
 
-@media only screen and (max-width: 900px) {
-   body {
-       max-width: 100% !important;
-      padding-left: 2% !important;
-      padding-right: 2% !important;
-   }
+@media (max-width: 768px) {
+.content-container.site-container {
+    padding: 0 10px;
+}
+}
+
+@media (max-width: 768px) {
+.site-top-footer-inner-wrap {
+    grid-row-gap: 0;
+}
 }
 
 * {
@@ -38,8 +43,6 @@ body{
     line-height:1.28581;
     border: 0 none;
 }
-
-
 
 
 .customnav{
@@ -86,10 +89,6 @@ body{
 }
 
 
-
-
-
-
 .github-menu {
   /*position: absolute;*/
   bottom: 10%;
@@ -121,6 +120,7 @@ body{
 .github-text h6 {
   margin: 0px
 }
+
 
 .graph_importer {
     width:100%;
