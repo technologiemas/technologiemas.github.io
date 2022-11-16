@@ -1,6 +1,22 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+/*@media only screen and (max-width: 1500px) {*/
+/*   body {*/
+/*      padding-left: 5% !important;*/
+/*      padding-right: 5% !important;*/
+/*   }*/
+/*}*/
+
+/*@media only screen and (max-width: 600px) {*/
+/*   body {*/
+/*      padding-left: 2% !important;*/
+/*      padding-right: 2% !important;*/
+/*   }*/
+/*}*/
+
+
+
 * {
     font-family: 'Lato', serif;
 }
@@ -9,10 +25,12 @@ p {
     text-align: justify;
 }
 
+a { text-decoration: none; }
+
 body{
     max-width: 700px !important;
     margin: auto !important;
-    padding: 50px !important;
+    padding: 5% !important;
     text-justify: inter-word;
     text-align: justify;
     font-size:18px;
@@ -87,5 +105,3 @@ body{
 .github-text h6 {
   margin: 0px
 }
-
-a { text-decoration: none; }
