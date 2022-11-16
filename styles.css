@@ -50,3 +50,37 @@ body{
 .home {
     background-color: seagreen;
 }
+
+.github-menu {
+  /*position: absolute;*/
+  bottom: 10%;
+  z-index: 600;
+  right: 10%;
+  border-radius: 5px;
+}
+
+.github-menu:hover {
+  box-shadow: 0px 0px 30px 1px rgba(46, 139, 87, 0.3) !important;
+}
+
+.github-element{
+  display: flex;
+  align-items: center;
+  color: seagreen;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.github-text {
+  padding-left: 10px;
+}
+
+.github-text h5 {
+  margin: 0px
+}
+
+.github-text h6 {
+  margin: 0px
+}
+
+a { text-decoration: none; }
