@@ -120,3 +120,8 @@ body{
 .github-text h6 {
   margin: 0px
 }
+
+.graph_importer {
+    width:100%;
+    height:400px
+}
