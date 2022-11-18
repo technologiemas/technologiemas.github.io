@@ -23,6 +23,11 @@ p {
 
 a { text-decoration: none; }
 
+.golCanvas{
+    margin-left: 5%;
+    margin-right: 5%
+}
+
 body{
     max-width: 43.75em;
     margin: auto;
@@ -35,7 +40,6 @@ body{
     line-height:1.28581;
     border: 0 none;
 }
-
 
 .customnav{
     list-style-type: none;

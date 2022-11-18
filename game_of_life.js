@@ -82,12 +82,28 @@ let globalState = {
 };
 
 let settings = {
-    width: document.getElementById("myCanvas").width,
-    height: document.getElementById("myCanvas").height,
+    width: 0.8 * document.body.clientWidth,
+    height: 0.8 * document.body.clientWidth,
     cols: 40,
     rows: 40,
     speed: 300 - 70, // in ms, so higher is slower
+    win: {}
 };
+
+function resizeCanvas() {
+    let canvs = document.getElementById("myCanvas");
+    const ctx = canvs.getContext("2d");
+    settings.width = 0.8 * document.body.clientWidth;
+    settings.height = 0.8 * document.body.clientWidth;
+
+    canvs.width = 0.8 * document.body.clientWidth;
+    canvs.height = 0.8 * document.body.clientWidth;
+
+    const cellHeight = settings.height / settings.rows
+    const cellWidth = settings.width / settings.cols
+    drawCells(ctx, settings.win, cellHeight, cellWidth);
+}
+
 
 async function main() {
     const canvas = document.getElementById("myCanvas");
@@ -108,7 +124,15 @@ async function main() {
 
     // noinspection InfiniteLoopJS
     while (true) {
+         settings.win = win
         if (globalState.running) {
+
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = settings.width;
+            canvas.height = settings.height;
+
+
             if (previousSize.cols !== settings.cols || globalState.reset) {
                 // UPDATE board with new size
                 win = fillBoard(settings.cols, settings.rows);
