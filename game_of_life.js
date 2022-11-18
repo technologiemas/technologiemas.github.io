@@ -81,23 +81,36 @@ let globalState = {
     reset: false,
 };
 
+
 let settings = {
-    width: 0.8 * document.body.clientWidth,
-    height: 0.8 * document.body.clientWidth,
+    width: 400,
+    height: 400,
     cols: 40,
     rows: 40,
     speed: 300 - 70, // in ms, so higher is slower
     win: {}
 };
 
-function resizeCanvas() {
-    let canvs = document.getElementById("myCanvas");
-    const ctx = canvs.getContext("2d");
-    settings.width = 0.8 * document.body.clientWidth;
-    settings.height = 0.8 * document.body.clientWidth;
+function setSizing(canvas) {
+    const bodyElement = document.getElementById("body_id")
 
-    canvs.width = 0.8 * document.body.clientWidth;
-    canvs.height = 0.8 * document.body.clientWidth;
+    let styleCanvas = canvas.currentStyle || window.getComputedStyle(canvas);
+    let margin = parseInt(styleCanvas.marginLeft) * 2
+    let styleBody = canvas.currentStyle || window.getComputedStyle(bodyElement);
+    let padding = parseInt(styleBody.paddingLeft) * 2
+
+    settings.width = document.body.clientWidth - margin - padding;
+    settings.height = document.body.clientWidth - margin - padding;
+
+    canvas.width =  settings.width;
+    canvas.height =  settings.height;
+}
+
+function resizeCanvas() {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    setSizing(canvas)
 
     const cellHeight = settings.height / settings.rows
     const cellWidth = settings.width / settings.cols
@@ -108,6 +121,10 @@ function resizeCanvas() {
 async function main() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
+    const bodyElement = document.getElementById("body_id")
+
+    setSizing(canvas)
+
     canvas.width = settings.width;
     canvas.height = settings.height;
 

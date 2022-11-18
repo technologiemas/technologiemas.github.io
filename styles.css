@@ -8,6 +8,11 @@
       padding-right: 2% !important;
        font-size: 1.2em !important;
    }
+
+    .golCanvas{
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+}
     /*.customnav li a {*/
     /*    font-size: 1.5625em !important;*/
     /*}*/
@@ -25,7 +30,7 @@ a { text-decoration: none; }
 
 .golCanvas{
     margin-left: 5%;
-    margin-right: 5%
+    margin-right: 5%;
 }
 
 body{
@@ -39,6 +44,7 @@ body{
     letter-spacing:0;
     line-height:1.28581;
     border: 0 none;
+
 }
 
 .customnav{
