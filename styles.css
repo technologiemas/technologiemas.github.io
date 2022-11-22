@@ -28,13 +28,17 @@ p {
 
 a { text-decoration: none; }
 
+h1 {
+    text-align: left;
+}
+
 .golCanvas{
     margin-left: 5%;
     margin-right: 5%;
 }
 
 body{
-    max-width: 43.75em;
+    max-width: 42em;
     margin: auto;
     padding: 5%;
     text-justify: inter-word;

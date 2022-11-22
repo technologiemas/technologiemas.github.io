@@ -1,3 +1,5 @@
+"use strict"
+
 function fillBoard(COLS, ROWS) {
     return Array(ROWS).fill(0, undefined, undefined).map(() => Array(COLS).fill(0).map(() => Math.round(Math.random() - 0.3)))
 }
@@ -43,12 +45,12 @@ function updateWin(win) {
     var boardNew = _.cloneDeep(win);
     const neighbours = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
 
-    for (row in win) {
+    for (let row in win) {
         row = parseInt(row);
-        for (col in win[row]) {
+        for (let col in win[row]) {
             col = parseInt(col);
             let count = 0;
-            for ([xShift, yShift] of neighbours) {
+            for (let [xShift, yShift] of neighbours) {
                 if (!checkBounds(win, row, col, xShift, yShift)) {
                     continue
                 }
@@ -83,8 +85,8 @@ let globalState = {
 
 
 let settings = {
-    width: 400,
-    height: 400,
+    width: 0,
+    height: 0,
     cols: 40,
     rows: 40,
     speed: 300 - 70, // in ms, so higher is slower
@@ -92,12 +94,12 @@ let settings = {
 };
 
 function setSizing(canvas) {
-    const bodyElement = document.getElementById("body_id")
+    const bodyElement = document.getElementById("body_id");
 
     let styleCanvas = canvas.currentStyle || window.getComputedStyle(canvas);
-    let margin = parseInt(styleCanvas.marginLeft) * 2
+    let margin = parseInt(styleCanvas.marginLeft) * 2;
     let styleBody = canvas.currentStyle || window.getComputedStyle(bodyElement);
-    let padding = parseInt(styleBody.paddingLeft) * 2
+    let padding = parseInt(styleBody.paddingLeft) * 2;
 
     settings.width = document.body.clientWidth - margin - padding;
     settings.height = document.body.clientWidth - margin - padding;
@@ -112,18 +114,16 @@ function resizeCanvas() {
 
     setSizing(canvas)
 
-    const cellHeight = settings.height / settings.rows
-    const cellWidth = settings.width / settings.cols
+    const cellHeight = settings.height / settings.rows;
+    const cellWidth = settings.width / settings.cols;
     drawCells(ctx, settings.win, cellHeight, cellWidth);
 }
-
 
 async function main() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
-    const bodyElement = document.getElementById("body_id")
 
-    setSizing(canvas)
+    setSizing(canvas);
 
     canvas.width = settings.width;
     canvas.height = settings.height;
@@ -157,7 +157,7 @@ async function main() {
                     cols: settings.cols,
                     rows: settings.rows,
                 };
-                globalState.reset = false
+                globalState.reset = false;
             }
 
             const cellHeight = settings.height / settings.rows
