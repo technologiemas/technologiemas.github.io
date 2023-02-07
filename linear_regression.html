@@ -41,14 +41,14 @@
 <!-- directives:[] -->
 <p>When analysing a dataset, it is useful to be able to say something about interaction between variables. A regression analysis can be used to estimate such a relationship. Such an analysis can be achieved using machine learning. Many packages are available for any programming language to perform linear regression. I decided to write one myself in Python.</p>
 <p>Say we have data on housing prices, and the room area these houses offer. We can plot this data as follows:</p>
-<p><img src="linear_regression_images/data_plot 2.png"></p>
+<p><img src="linear_regression_images/data_plot.png"></p>
 <p>Can we say something about how well the <strong>area</strong> (independent value) can influence the <strong>price</strong> (dependent value)?</p>
 <p>To begin, we can draw a random straight line through the data. We draw this such that $y = ax + b$. In machine learning the <em>a</em> here is also called the <strong>weight</strong>, and the <em>b</em> is called the <strong>bias</strong>. Thus, for each value $x$, a $\hat{y}$ value is predicted. Say we start our line <em>500 000</em> (the bias), and we take a slope of <em>1000</em> (the weight). For every square meter we add to the area, we expect the price to increase by <em>1000</em>.</p>
 <pre><code class="prettyprint"># For every x value in the dataset, we can predict a y value using our weight and bias values. By using Numpy this calculation is done for every value automatically.
 
 def predict_y(x: NPArray, weight: float, bias: float) -&gt; NPArray:
     return weight * x + bias</code></pre>
-<p><img src="linear_regression_images/random_line 1.png"></p>
+<p><img src="linear_regression_images/random_line.png"></p>
 <h1 id="the-loss-function">The loss function</h1>
 <p>How well does this line fit our data? We can determine this by calculating how far the real values $y$ lay from our approximated values $\hat{y}$ using the line formula. This is called the loss function: $(ŷ - y)^2$. Do this for every data point, and we have a measure of fit: $\frac{1}{2m}\sum\limits_{i=1}^{m} (ŷ_i - y_i)^2$.</p>
 <pre><code class="prettyprint">def calc_loss(y: NPArray, y_hat: NPArray) -&gt; float:
@@ -66,10 +66,10 @@ Alpha ($\alpha$) represents the learning rate you want to set. A smaller rate ta
     weight_new: float = weight - Const.ALPHA * der
     return weight_new</code></pre>
 <p>Repeatedly adjusting the weight and bias <em>1000</em> times results in the following line:</p>
-<p><img src="linear_regression_images/Linear_regression 1.png"><br />
+<p><img src="linear_regression_images/linear_regression.png"><br />
 Weight: <em>4620</em>, bias: <em>238 733</em>.</p>
 <p>If we plot the loss measure through time we can see as the algorithms repeatedly adjusts the weight and bias (below). The graph converges to the most optimal fit. For this dataset and learning rate, we can see after about <em>200</em> runs the loss value starts to flatten. We are now approaching the most optimal line as plotted above.</p>
-<p><img src="linear_regression_images/loss 1.png"></p>
+<p><img src="linear_regression_images/Loss.png"></p>
 <h1 id="gradient-descent">Gradient descent</h1>
 <p>We can also plot this in 3D for a wide variety of possible weights and biases. From whatever starting point (red cross), with enough runs the weight and bias will be adjusted and the loss will decrease accordingly. This is presented as the red line in the graph. Imagine a ball rolling down the slope. This process is called gradient descent. The lowest point on the graph represents the optimal weight and bias we found above.</p>
 <p><img src="linear_regression_images/gradient descent.png"></p>
@@ -78,8 +78,8 @@ Weight: <em>4620</em>, bias: <em>238 733</em>.</p>
 <pre><code class="prettyprint"># The R-squared value can be calculated using the sum of squares total, and sum of squares regression values.
 
 def calc_r_squared(y: NPArray, y_hat: NPArray) -&gt; float:
-    sst = np.add.reduce((y-mean(y))**2)
-    ssr = np.add.reduce((y_hat-mean(y))**2)
+    sst = np.add.reduce((y-mean(y)) ** 2)
+    ssr = np.add.reduce((y_hat-mean(y)) ** 2)
 
     r_squared = ssr/sst
     return r_squared</code></pre>
