@@ -66,7 +66,7 @@ Alpha ($\alpha$) represents the learning rate you want to set. A smaller rate ta
     weight_new: float = weight - Const.ALPHA * der
     return weight_new</code></pre>
 <p>Repeatedly adjusting the weight and bias <em>1000</em> times results in the following line:</p>
-<p><img src="linear_regression_images/linear_regression.png"><br />
+<p><img src="linear_regression_images/Linear_regression.png"><br />
 Weight: <em>4620</em>, bias: <em>238 733</em>.</p>
 <p>If we plot the loss measure through time we can see as the algorithms repeatedly adjusts the weight and bias (below). The graph converges to the most optimal fit. For this dataset and learning rate, we can see after about <em>200</em> runs the loss value starts to flatten. We are now approaching the most optimal line as plotted above.</p>
 <p><img src="linear_regression_images/Loss.png"></p>
