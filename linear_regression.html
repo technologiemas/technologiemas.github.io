@@ -72,7 +72,7 @@ Weight: <em>4620</em>, bias: <em>238 733</em>.</p>
 <p><img src="linear_regression_images/Loss.png"></p>
 <h1 id="gradient-descent">Gradient descent</h1>
 <p>We can also plot this in 3D for a wide variety of possible weights and biases. From whatever starting point (red cross), with enough runs the weight and bias will be adjusted and the loss will decrease accordingly. This is presented as the red line in the graph. Imagine a ball rolling down the slope. This process is called gradient descent. The lowest point on the graph represents the optimal weight and bias we found above.</p>
-<p><img src="linear_regression_images/gradient descent.png"></p>
+<p><img src="linear_regression_images/gradient_descent 3.png"></p>
 <h1 id="rsup2sup-and-p-values">R<sup>2</sup> and p-values</h1>
 <p>One form of the loss value that is often reported in a regression analysis is called the R<sup>2</sup> value. This is a measure between 0 and 1 on how well the line fits our data. If all data points were to lay on the predicted line, the R would be 1. In our dataset, the R<sup>2</sup> value is: <em>0.29</em>. In other words, 29% of our data can be explained by the line we drew through it.</p>
 <pre><code class="prettyprint"># The R-squared value can be calculated using the sum of squares total, and sum of squares regression values.
